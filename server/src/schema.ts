@@ -1,21 +1,25 @@
 import gql from "graphql-tag";
 
 export const typeDefs = gql`
-  # define your types here
   type Query {
-    spaceCats: [SpaceCat]
+    "Get tracks array for homepage grid"
+    tracksForHome: [Track!]!
   }
 
-  type SpaceCat {
+  "A track is a group of Modules that teaches about a specific topic"
+  type Track {
     id: ID!
-    name: String!
-    age: Int
-    missions: [Mission]
+    title: String!
+    author: Author!
+    thumbnail: String
+    length: Int
+    modulesCount: Int
   }
 
-  type Mission {
+  "Author of a complete Track or a Module"
+  type Author {
     id: ID!
     name: String!
-    description: String!
+    photo: String
   }
 `;
