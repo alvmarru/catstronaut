@@ -3,7 +3,6 @@ import gql from "graphql-tag";
 export const typeDefs = gql`
   # define your types here
   type Query {
-    "Get tracks array for homepage grid"
     spaceCats: [SpaceCat]
   }
 
